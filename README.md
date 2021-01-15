@@ -66,10 +66,6 @@ In another terminal (do not close the ```kubectl proxy```), create the ClusterRo
 Generate authorization token
 ```bash
 ~$ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep service-controller-token | awk '{print $1}')
-
-### OR (directly...)
-
-~$  kubectl -n kube-system get secret $(kubectl -n kube-system get secret | grep service-controller-token | awk '{print $1}') -o jsonpath='{.data.token}'
 ```
 ---
 
